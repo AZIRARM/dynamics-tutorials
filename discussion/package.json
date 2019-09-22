@@ -1,0 +1,14 @@
+{
+  "name": "discussion",
+  "version": "1.0.0",
+  "description": "api nodejs pour gérer une discussion simple comme un tchat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "azirar mhamed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
