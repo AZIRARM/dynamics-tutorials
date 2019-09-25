@@ -2,7 +2,6 @@ let functions = require('firebase-functions');
 let servicesMembres = require('./assets/services/MembersServices');
 let servicesDiscussion = require('./assets/services/DiscussionService');
 
-
 let express = require('express');
 let api = express();
 let port = 9000;
@@ -27,6 +26,15 @@ api.get('/members/:idMember', function(req, resp) {
 });
 api.delete('/members/:idMember', function(req, resp) {
     servicesMembres.deleteMember(req.params.idMember, resp);
+});
+
+
+api.post('/messages', function(req, resp) {
+    servicesDiscussion.sendMessage(req.body, resp);
+});
+
+api.delete('/messages/member/:idMember', function(req, resp) {
+    servicesDiscussion.deleteMember(req.params.idMember, resp);
 });
 
 api.listen(port, function() {
